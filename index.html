@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Dashboard</title>
+        <!-- Boostrap Stylesheet -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body onload="getHistory()">
+        <header class="headerTitle">
+            <h1>Weather Dashboard</h1>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div id="historyDiv" class="col-sm-6 col-md-4 col-lg-3">
+                    <p style="font-size: 20px;font-weight: bold;">Search for a city:</p>
+                    <div class="container">
+                        <form class="row">
+                            <input class="col-10" type="text" id="cityName" placeholder="Type City name here..." required>
+                            <button id="searchButton" class="col-2" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                        <div class="row" id="lastHistory"></div>
+                        <div class="row" id="clearHis"></div>
+                    </div>   
+                </div>                
+                <div class="col-sm-6 col-md-8 col-lg-9">
+                    <div id="currentWeather">
+                        <span id="name"></span>
+                        <span id="date"></span>
+                        <span><img id="weatherIcon"></span><br>                        
+                        <span>Temperature: </span><span id="temperature"></span><br>
+                        <span>Humidity: </span><span id="humidity"></span><br>
+                        <span>Wind speed: </span><span id="windSpeed"></span><br>
+                        <span>UV Index: </span><span id="uvIndex"></span><br>
+                    </div>
+                    <div class="container" id="forecastDiv">
+                        <br>
+                        <h4>5-Day Forecast:</h4>
+                        <div class="row">
+                            <div class="col forecast" next-day="0"></div>
+                            <div class="col forecast" next-day="1"></div>
+                            <div class="col forecast" next-day="2"></div>
+                            <div class="col forecast" next-day="3"></div>
+                            <div class="col forecast" next-day="4"></div>
+                        </div>
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+        <script src="assets/scripts/script.js"></script>
+    </body>
+</html>
