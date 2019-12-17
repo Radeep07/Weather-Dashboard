@@ -1,3 +1,4 @@
+//this is a function on page load i.e., first function that is called
 function getHistory() {
     //filling the search history if exists
     searchHistory();
@@ -157,8 +158,8 @@ function fillCurrentWeatherDetails(response) {
 function searchHistory() {
     //read the list of searched cities from local storage and populate in the search div
     var cityList = JSON.parse(localStorage.getItem("cities"));
-    //Remove the previously added cities for refreshing the contents of the search history
-    $("#lastHistory").empty();
+    //remove the previously added cities for refreshing the contents of the search history
+    $("#lastHistory").empty();     
     if(cityList !== null) {
         // Create and add new buttons for each city read from the search history
         for(var i=0; i<cityList.length; i++) {
@@ -166,10 +167,24 @@ function searchHistory() {
             button.text(cityList[i]);
             button.attr("class", "button");
             $("#lastHistory").append(button);
-        }
+        } 
+        //remove the previously added clear button if any
+        $("#clearHis").empty();  
+        //a button added to clear the hisotry of searched cities
+        var clearButton=$("<button>");
+        clearButton.attr("class", "clearHistory");
+        clearButton.text("Clear History");
+        $("#clearHis").append(clearButton);        
     }
-
 }
+//remove the search list by clearing the local storage
+$("#clearHis").on("click", function(event) {
+    event.preventDefault();
+    //clear off the last searched city history
+    localStorage.clear();
+    searchHistory();
+});
+
 function fillUVIValue(response) {
     var uvTag = $("#uvIndex");
     uvTag.text(response.value);
