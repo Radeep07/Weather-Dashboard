@@ -51,4 +51,6 @@ Here under some guidelines how I have developed the application:
 
 ![weather dashboard](./Assets/images/Server-Side-API.png)
 
+The link to deployed application can be found at [weather dashboard](https://radeep07.github.io/Weather-Dashboard/)
+
 
