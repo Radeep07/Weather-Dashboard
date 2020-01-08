@@ -49,7 +49,7 @@ Here under some guidelines how I have developed the application:
 
   * Humidity
 
-![weather dashboard](./Assets/images/weatherDashboard.png)
+![weather dashboard](./Assets/images/weatherDashboard.PNG)
 
 The link to deployed application can be found at [weather dashboard](https://radeep07.github.io/Weather-Dashboard/)
 
